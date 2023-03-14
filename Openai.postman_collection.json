@@ -1,0 +1,560 @@
+{
+	"info": {
+		"_postman_id": "7e773149-e05c-4f0d-a74c-da9542d5e25b",
+		"name": "Openai",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Openai",
+			"item": [
+				{
+					"name": "https://api.openai.com/v1/chat/completions",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer YOUR_API_KEY"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"model\": \"gpt-3.5-turbo\",\n    \"messages\": [\n        {\n            \"role\": \"user\",\n            \"content\": \"Say this is a test!\"\n        }\n    ],\n    \"temperature\": 0.7\n}"
+						},
+						"url": {
+							"raw": "https://api.openai.com/v1/chat/completions",
+							"protocol": "https",
+							"host": [
+								"api",
+								"openai",
+								"com"
+							],
+							"path": [
+								"v1",
+								"chat",
+								"completions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "https://api.openai.com/v1/models",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.openai.com/v1/models",
+							"protocol": "https",
+							"host": [
+								"api",
+								"openai",
+								"com"
+							],
+							"path": [
+								"v1",
+								"models"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "https://api.openai.com/v1/models/text-davinci-003",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.openai.com/v1/models/text-davinci-003",
+							"protocol": "https",
+							"host": [
+								"api",
+								"openai",
+								"com"
+							],
+							"path": [
+								"v1",
+								"models",
+								"text-davinci-003"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "https://api.openai.com/v1/edits",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"model\": \"text-davinci-edit-001\",\n    \"input\": \"What day of the wek is it?\",\n    \"instruction\": \"Fix the spelling mistakes\"\n}"
+						},
+						"url": {
+							"raw": "https://api.openai.com/v1/edits",
+							"protocol": "https",
+							"host": [
+								"api",
+								"openai",
+								"com"
+							],
+							"path": [
+								"v1",
+								"edits"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "https://api.openai.com/v1/images/generations",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"prompt\": \"A dog\",\n    \"n\": 1,\n    \"size\": \"1024x1024\"\n}"
+						},
+						"url": {
+							"raw": "https://api.openai.com/v1/images/generations",
+							"protocol": "https",
+							"host": [
+								"api",
+								"openai",
+								"com"
+							],
+							"path": [
+								"v1",
+								"images",
+								"generations"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "https://api.openai.com/v1/images/edits",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/Users/shivakum/Downloads/dog-png-22667 (1).png"
+								},
+								{
+									"key": "mask",
+									"type": "file",
+									"src": [],
+									"disabled": true
+								},
+								{
+									"key": "prompt",
+									"value": "A dog wearing glasses",
+									"type": "text"
+								},
+								{
+									"key": "n",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "size",
+									"value": "1024x1024",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "https://api.openai.com/v1/images/edits",
+							"protocol": "https",
+							"host": [
+								"api",
+								"openai",
+								"com"
+							],
+							"path": [
+								"v1",
+								"images",
+								"edits"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "https://api.openai.com/v1/images/variations",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/Users/shivakum/Downloads/dog-png-22667 (1).png"
+								},
+								{
+									"key": "n",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "size",
+									"value": "1024x1024",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://api.openai.com/v1/images/variations",
+							"protocol": "https",
+							"host": [
+								"api",
+								"openai",
+								"com"
+							],
+							"path": [
+								"v1",
+								"images",
+								"variations"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "https://api.openai.com/v1/embeddings",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"input\": \"The speakers ...\",\n    \"model\": \"text-embedding-ada-002\"\n}"
+						},
+						"url": {
+							"raw": "https://api.openai.com/v1/embeddings",
+							"protocol": "https",
+							"host": [
+								"api",
+								"openai",
+								"com"
+							],
+							"path": [
+								"v1",
+								"embeddings"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "https://api.openai.com/v1/audio/transcriptions",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/Users/shivakum/Downloads/4-year-old-counting-to-10-94902.mp3"
+								},
+								{
+									"key": "model",
+									"value": "whisper-1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://api.openai.com/v1/audio/transcriptions",
+							"protocol": "https",
+							"host": [
+								"api",
+								"openai",
+								"com"
+							],
+							"path": [
+								"v1",
+								"audio",
+								"transcriptions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "https://api.openai.com/v1/fine-tunes",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"training_file\": \"file-XGinujblHPwGLSztz8cPS8XY\"\n}"
+						},
+						"url": {
+							"raw": "https://api.openai.com/v1/fine-tunes",
+							"protocol": "https",
+							"host": [
+								"api",
+								"openai",
+								"com"
+							],
+							"path": [
+								"v1",
+								"fine-tunes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "https://api.openai.com/v1/fine-tunes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.openai.com/v1/fine-tunes",
+							"protocol": "https",
+							"host": [
+								"api",
+								"openai",
+								"com"
+							],
+							"path": [
+								"v1",
+								"fine-tunes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "https://api.openai.com/v1/fine-tunes/ft-AF1WoRqd3aJAHsqc9NY7iL8F",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.openai.com/v1/fine-tunes/ft-AF1WoRqd3aJAHsqc9NY7iL8F",
+							"protocol": "https",
+							"host": [
+								"api",
+								"openai",
+								"com"
+							],
+							"path": [
+								"v1",
+								"fine-tunes",
+								"ft-AF1WoRqd3aJAHsqc9NY7iL8F"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "https://api.openai.com/v1/fine-tunes/ft-AF1WoRqd3aJAHsqc9NY7iL8F/cancel",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "https://api.openai.com/v1/fine-tunes/ft-AF1WoRqd3aJAHsqc9NY7iL8F/cancel",
+							"protocol": "https",
+							"host": [
+								"api",
+								"openai",
+								"com"
+							],
+							"path": [
+								"v1",
+								"fine-tunes",
+								"ft-AF1WoRqd3aJAHsqc9NY7iL8F",
+								"cancel"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "https://api.openai.com/v1/fine-tunes/ft-AF1WoRqd3aJAHsqc9NY7iL8F/events",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.openai.com/v1/fine-tunes/ft-AF1WoRqd3aJAHsqc9NY7iL8F/events",
+							"protocol": "https",
+							"host": [
+								"api",
+								"openai",
+								"com"
+							],
+							"path": [
+								"v1",
+								"fine-tunes",
+								"ft-AF1WoRqd3aJAHsqc9NY7iL8F",
+								"events"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "https://api.openai.com/v1/models/curie:ft-acmeco-2021-03-03-21-44-20",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://api.openai.com/v1/models/curie:ft-acmeco-2021-03-03-21-44-20",
+							"protocol": "https",
+							"host": [
+								"api",
+								"openai",
+								"com"
+							],
+							"path": [
+								"v1",
+								"models",
+								"curie:ft-acmeco-2021-03-03-21-44-20"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "https://api.openai.com/v1/moderations",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"input\": \"I want to kill them.\"\n}"
+						},
+						"url": {
+							"raw": "https://api.openai.com/v1/moderations",
+							"protocol": "https",
+							"host": [
+								"api",
+								"openai",
+								"com"
+							],
+							"path": [
+								"v1",
+								"moderations"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "https://api.openai.com/v1/engines",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.openai.com/v1/engines",
+							"protocol": "https",
+							"host": [
+								"api",
+								"openai",
+								"com"
+							],
+							"path": [
+								"v1",
+								"engines"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "https://api.openai.com/v1/engines/text-davinci-003",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.openai.com/v1/engines/text-davinci-003",
+							"protocol": "https",
+							"host": [
+								"api",
+								"openai",
+								"com"
+							],
+							"path": [
+								"v1",
+								"engines",
+								"text-davinci-003"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "add me",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		}
+	]
+}
